@@ -10,10 +10,7 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
     git clone https://github.com/cuber/ngx_http_google_filter_module && \
     git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module && \
     cd nginx-${NGINX_VER} && \
-    ./configure --prefix=/opt/nginx \
-        --with-http_ssl_module \
-        --add-module=../ngx_http_google_filter_module \
-        --add-module=../ngx_http_substitutions_filter_module && \
+    ./configure --prefix=/opt/nginx --with-http_ssl_module --add-module=../ngx_http_google_filter_module --add-module=../ngx_http_substitutions_filter_module && \
     make && make install && \
     apk del git build-base && \
     cd / && \
