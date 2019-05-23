@@ -18,11 +18,9 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
     apk del git build-base && \
     rm -rf /src && \
     rm -rf /var/cache/apk/*
-
-ADD nginx.conf /opt/nginx/conf/nginx.conf
-#如果需要https支持则注释上一行并解注释下两行
-#ADD nginx-https.conf /opt/nginx/conf/nginx.conf
-#ADD domain.csr domain.key.unsecure /etc/ssl/private/
+    
+RUN mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx_bak.conf
+RUN wget -P /opt/nginx/conf/ https://raw.githubusercontent.com/GeekerXu/google-mirror/master/nginx.conf
 
 EXPOSE 80 443
 CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
