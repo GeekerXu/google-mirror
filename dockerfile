@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Yifei Kong <kong@yifei.me>
+MAINTAINER GeekerXu <flyxuchao@gmail.com>
 
 ENV NGINX_VER 1.13.0
 
