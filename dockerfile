@@ -22,5 +22,5 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
 RUN mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx_bak.conf
 RUN wget -P /opt/nginx/conf/ https://raw.githubusercontent.com/GeekerXu/google-mirror/master/nginx.conf
 
-EXPOSE 80 443
+EXPOSE 80
 CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
