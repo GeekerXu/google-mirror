@@ -16,6 +16,7 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
         --add-module=../ngx_http_substitutions_filter_module && \
     make && make install && \
     apk del git build-base && \
+    cd / && \
     rm -rf /src && \
     rm -rf /var/cache/apk/*
     
