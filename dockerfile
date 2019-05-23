@@ -19,7 +19,6 @@ RUN apk add --update git openssl-dev pcre-dev zlib-dev wget build-base && \
     rm -rf /src && \
     rm -rf /var/cache/apk/*
     
-RUN mv /opt/nginx/conf/nginx.conf /opt/nginx/conf/nginx_bak.conf
 RUN wget -P /opt/nginx/conf/ https://raw.githubusercontent.com/GeekerXu/google-mirror/master/nginx.conf
 
 EXPOSE 80
